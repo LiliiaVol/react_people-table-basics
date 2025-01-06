@@ -6,6 +6,11 @@ type Props = {
   person: Person;
 };
 
+enum Sex {
+  Female = 'f',
+  Male = 'm',
+}
+
 export const PersonLink: React.FC<Props> = (props: Props) => {
   const { person } = props;
 
@@ -13,7 +18,7 @@ export const PersonLink: React.FC<Props> = (props: Props) => {
     <a
       href={`#/people/${person.slug}`}
       className={classNames({
-        'has-text-danger': person.sex === 'f',
+        'has-text-danger': person.sex === Sex.Female,
       })}
     >
       {person.name}

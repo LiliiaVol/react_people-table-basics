@@ -6,6 +6,8 @@ type Props = {
   people: Person[];
 };
 
+const columnNames = ['Name', 'Sex', 'Born', 'Died', 'Mother', 'Father'];
+
 export const PeopleTable: React.FC<Props> = (props: Props) => {
   const { people } = props;
 
@@ -16,12 +18,9 @@ export const PeopleTable: React.FC<Props> = (props: Props) => {
     >
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Sex</th>
-          <th>Born</th>
-          <th>Died</th>
-          <th>Mother</th>
-          <th>Father</th>
+          {columnNames.map(name => (
+            <th key={name}>{name}</th>
+          ))}
         </tr>
       </thead>
 

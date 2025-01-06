@@ -11,9 +11,7 @@ export const PeoplePage: React.FC = () => {
 
   useEffect(() => {
     getPeople()
-      .then(responses => {
-        setPeople(responses);
-      })
+      .then(setPeople)
       .catch(() => {
         setError(true);
       })

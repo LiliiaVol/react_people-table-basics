@@ -8,6 +8,8 @@ type Props = {
   people: Person[];
 };
 
+const noParent = '-';
+
 export const PersonComponent = (props: Props) => {
   const { person, people } = props;
   const { slug, sex, born, died, fatherName, motherName } = person;
@@ -42,8 +44,8 @@ export const PersonComponent = (props: Props) => {
       <td>{sex}</td>
       <td>{born}</td>
       <td>{died}</td>
-      <td>{motherName ? renderPersonLink(motherName) : '-'}</td>
-      <td>{fatherName ? renderPersonLink(fatherName) : '-'}</td>
+      <td>{motherName ? renderPersonLink(motherName) : noParent}</td>
+      <td>{fatherName ? renderPersonLink(fatherName) : noParent}</td>
     </tr>
   );
 };
